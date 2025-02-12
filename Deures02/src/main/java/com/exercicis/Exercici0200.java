@@ -114,7 +114,7 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testDrawPascalFive
      */
     public static void drawPascal(int n) {
-        
+
     }
 
     /**
@@ -131,7 +131,11 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testAddListDecimals
      */
     public static double addList(ArrayList<Double> list) {
-        return 0.0;
+        double sum = 0;
+        for (double numDouble : list){
+            sum += numDouble;
+        }
+        return sum;
     }
 
     /** 
