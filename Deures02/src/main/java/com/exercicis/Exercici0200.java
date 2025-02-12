@@ -2,6 +2,8 @@ package com.exercicis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -193,7 +195,7 @@ public class Exercici0200 {
      * no es repeteix dins d'una cadena de text
      * si totes les lletres es repeteixen torna '_'
      * 
-     * Exemple:
+     * Exemple: dead
      * 
      * Entrada: "swiss"
      * Sortida: 'w'
@@ -208,11 +210,21 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testFirstNonRepeatedAllRepeated
      * @test ./runTest.sh com.exercicis.TestExercici0200#testFirstNonRepeatedLongString
      */
+    //TODO
     public static char firstNonRepeated(String str) {
-        return '_';
-    }
+    //     for (int i = 0; i < str.length(); i++) {
+    //         str.substring(i, str.length()).contains(String.valueOf(str.charAt(i)));
+    //     }
+    //     for (char letra : str.toCharArray()) {
+    //         if (str.substring(str.indexOf(String.valueOf(letra))).contains(String.valueOf(letra))) {
 
-    /**
+    //         }
+    //     }
+        return 's';
+    }
+            
+            
+                /**
      * Fes una funció que inverteixi els caràcters
      * d'un número enter: 3645 > 5463
      * 
@@ -250,6 +262,18 @@ public class Exercici0200 {
      */
     public static ArrayList<Integer> minMaxAdd(ArrayList<Integer> nums) {
         ArrayList<Integer> rst = new ArrayList<>();
+        int primerNumero = 0;
+        int segonNumero = 0;
+        Collections.sort(nums);
+        for (int cnt = 0; cnt<nums.size()-1;cnt++){
+            primerNumero += nums.get(cnt);
+        }
+        rst.add(primerNumero);
+        Collections.reverse(nums);
+        for (int cnt = 0; cnt<nums.size()-1;cnt++){
+            segonNumero += nums.get(cnt);
+        }
+        rst.add(segonNumero);
         return rst;
     }
 

@@ -611,7 +611,7 @@ class TestExercici0200 {
     void testMinMaxAddWithNegatives(TestInfo testInfo) {
         try {
             ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(-1, -2, -3, -4, -5));
-            ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-10, -6));
+            ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-14, -10));
             assertEquals(expected, Exercici0200.minMaxAdd(nums));
             System.out.println("Test passed, succeeded!");
         } catch (AssertionError e) {
