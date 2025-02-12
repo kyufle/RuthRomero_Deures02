@@ -300,7 +300,8 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testSumaSenseSumarLargeNumbers
      */
     public static int sumaSenseSumar(int a, int b) {
-        return 0;
+        int resultado = Math.addExact(a, b);
+        return resultado;
     }
 
     /**
