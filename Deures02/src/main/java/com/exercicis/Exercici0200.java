@@ -71,8 +71,35 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testAddImaginariesWithZeroImaginaryPart
      * @test ./runTest.sh com.exercicis.TestExercici0200#testAddImaginariesLargeNumbers
      */
-    public static String addImaginaries(String num0, String num1) {
-        return "";
+     public static String addImaginaries(String num0, String num1) {
+        Integer num01;
+        Integer num02;
+        Integer num11;
+        Integer num12;
+
+
+        if(!num0.contains("+")) {
+            num01 = Integer.parseInt(num0.substring(0,num0.indexOf("-",1)));
+            num02 = Integer.parseInt(num0.substring(num0.indexOf("-",1)+1,num0.indexOf("i")));
+        } else {
+            num01 = Integer.parseInt(num0.substring(0,num0.indexOf("+")));
+            num02 = Integer.parseInt(num0.substring(num0.indexOf("+")+1,num0.indexOf("i")));
+        }
+
+        if(!num1.contains("+")) {
+            num11 = Integer.parseInt(num1.substring(0,num1.indexOf("-",1)));
+            num12 = Integer.parseInt(num1.substring(num1.indexOf("-",1),num1.indexOf("i")));
+        } else {
+            num11 = Integer.parseInt(num1.substring(0,num1.indexOf("+")));
+            num12 = Integer.parseInt(num1.substring(num1.indexOf("+")+1,num1.indexOf("i")));
+        }
+
+        if ((num02+num12)>=0){
+            return (num01+num11)+"+"+(num02+num12)+"i";
+        }
+
+        return ""+(num01+num11)+(num02+num12)+"i";
+        
     }
 
     /**
@@ -87,7 +114,7 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testDrawPascalFive
      */
     public static void drawPascal(int n) {
-
+        
     }
 
     /**
