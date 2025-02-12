@@ -244,6 +244,18 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testInvertirMapaClauValor
      */
     public static void invertirMapaClauValor() {
+        HashMap<String,Integer> mapaOriginal = new HashMap<>();
+        mapaOriginal.put("A", 1);
+        mapaOriginal.put("B", 2);
+        mapaOriginal.put("C", 3);
+
+        HashMap<Integer,String> mapaInvertit = new HashMap<>();
+        for (Map.Entry<String, Integer> clauValor : mapaOriginal.entrySet()) {
+            mapaInvertit.put(clauValor.getValue(), clauValor.getKey());
+        }
+        System.out.println("Mapa original: " + mapaOriginal);
+        System.out.println("Mapa invertit: " + mapaInvertit);
+
 
     }
 
