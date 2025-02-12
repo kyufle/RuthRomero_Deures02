@@ -240,7 +240,13 @@ public class Exercici0200 {
      */
     //TODO
     public static int inverInt(int num) {
-        return 0;
+        String numString = String.valueOf(num);
+        String numInv = "";
+        for (int i = numString.length()-1; i>=0;i--){
+            numInv += numString.charAt(i);
+        }
+        Integer numFinal = Integer.parseInt(numInv);
+        return numFinal;
     }
 
     /**
