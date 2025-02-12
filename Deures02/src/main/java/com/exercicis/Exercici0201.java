@@ -161,8 +161,15 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraArrayDecimalsSuperiors50
      */
+
+    //TODO no funciona
     public static ArrayList<Double> generaLlistaDecimals(int mida) {
         ArrayList<Double> rst = new ArrayList<>();
+        Random randomRang = new Random();
+        for (int i = 0; i<mida;i++){
+            double numsRandom = randomRang.nextDouble() * 100.0;
+            rst.add(numsRandom);
+        }
         return rst;
     }
 
@@ -198,28 +205,28 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraLlistaDecimalsSuperiors50
      */
     public static void filtraLlistaDecimalsSuperiors50(ArrayList<Double> decimals) {
-        ArrayList<Double> numsSuperiosACincuanta = new ArrayList<>();
-        for (double nums : decimals){
-            if (nums>50.0){
-                numsSuperiosACincuanta.add(nums);
-            }
-        }
-        System.out.print("Llista original: [");
-        for (int i = 0; i < decimals.size(); i++) {
-            System.out.print(String.format("%.2f", decimals.get(i)));
-            if (i < decimals.size() - 1){
-                System.out.print(", ");
-            }
-        }
-        System.out.println("]");
-        System.out.print("Valors majors que 50: [");
-        for (int i = 0; i < numsSuperiosACincuanta.size(); i++) {
-            System.out.print(String.format("%.2f", numsSuperiosACincuanta.get(i)));
-            if (i < numsSuperiosACincuanta.size() - 1){
-                System.out.print(", ");
-            } 
-        }
-        System.out.println("]");
+        // ArrayList<Double> numsSuperiosACincuanta = new ArrayList<>();
+        // for (double nums : decimals){
+        //     if (nums>50.0){
+        //         numsSuperiosACincuanta.add(nums);
+        //     }
+        // }
+        // System.out.print("Llista original: [");
+        // for (int i = 0; i < decimals.size(); i++) {
+        //     System.out.print(String.format("%.2f", decimals.get(i)));
+        //     if (i < decimals.size() - 1){
+        //         System.out.print(", ");
+        //     }
+        // }
+        // System.out.println("]");
+        // System.out.print("Valors majors que 50: [");
+        // for (int i = 0; i < numsSuperiosACincuanta.size(); i++) {
+        //     System.out.print(String.format("%.2f", numsSuperiosACincuanta.get(i)));
+        //     if (i < numsSuperiosACincuanta.size() - 1){
+        //         System.out.print(", ");
+        //     } 
+        // }
+        // System.out.println("]");
     }
     
     /**
