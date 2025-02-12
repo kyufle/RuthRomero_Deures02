@@ -324,8 +324,19 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testMinDistancesMultipleTargets
      * @test ./runTest.sh com.exercicis.TestExercici0200#testMinDistancesNoTargetFound
      */
+    //TODO
     public static ArrayList<Integer> minDistances(String text, char target) {
         ArrayList<Integer> rst = new ArrayList<>();
+        Integer cnt = 0;
+        for (int i = 0; i<text.length();i++){
+            if (text.charAt(i) == target){
+                cnt = 0;
+            }
+            else {
+                cnt += 1;
+            }
+            rst.add(cnt);
+        }
         return rst;
     }
 
@@ -350,6 +361,11 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testFindUniqueNumberNoUnique
      */
     public static Double findUniqueNumber(ArrayList<Double> nums) {
-        return 0.0;
+        for (Double num : nums){
+            if (!(Collections.frequency(nums, num) == 2)){
+                return num;
+            }
+        }
+        return null;
     }
 }
