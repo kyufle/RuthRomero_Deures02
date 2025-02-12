@@ -115,6 +115,7 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testDrawPascalThree
      * @test ./runTest.sh com.exercicis.TestExercici0200#testDrawPascalFive
      */
+    //TODO
     public static void drawPascal(int n) {
 
     }
@@ -153,6 +154,7 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testPrintMatrixRectangular
      * @test ./runTest.sh com.exercicis.TestExercici0200#testPrintMatrixEmpty
      */
+    //TODO
     public static void printMatrix(int[][] matrix) {
 
     }
@@ -185,6 +187,7 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testTransposeColumnMatrix
      * @test ./runTest.sh com.exercicis.TestExercici0200#testTransposeSingleElement
      */
+    //TODO
     public static int[][] transpose(int[][] matrix) {
         int[][] rst = new int[0][0];
         return rst;
@@ -235,6 +238,7 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testInverIntWithZeros
      * @test ./runTest.sh com.exercicis.TestExercici0200#testInverIntSingleDigit
      */
+    //TODO
     public static int inverInt(int num) {
         return 0;
     }
