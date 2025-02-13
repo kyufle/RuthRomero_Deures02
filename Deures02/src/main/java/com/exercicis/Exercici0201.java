@@ -137,7 +137,19 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraLlistaParaulesAmbA
      */
     public static void filtraLlistaParaulesAmbA() {
-
+        ArrayList<String> paraules = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Escriu 5 paraules separades per ',' o ', ': ");
+        String paraula = scanner.nextLine();
+        String[] llistaParaula = paraula.split(",\\s*");
+        for (String paraulaSeparada : llistaParaula){
+            if(paraulaSeparada.startsWith("a") || paraulaSeparada.startsWith("A")){
+                paraules.add(paraulaSeparada);
+            }
+        }
+        System.out.println("Paraules que comencen amb 'a': "+paraules);
+        
+       
     }
 
     /**
