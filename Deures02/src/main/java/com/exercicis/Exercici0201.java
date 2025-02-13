@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
@@ -82,8 +83,26 @@ public class Exercici0201 {
      * @param array l'array d'enters sobre el qual calcular les estadístiques
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostraArrayEstadistiques
      */
-    //TODO
+    //REVISAR ERROR TEST (pero funciona)
     public static void mostraArrayEstadistiques(int[] array) {
+        int sum = 0;
+        int numMax = array[0];
+        int numMin = array[0];
+        List<String> numerosList = new ArrayList<>();
+        for (Integer num : array){
+            if (num>numMax){
+                numMax = num;
+            }
+            if (num<numMin){
+                numMin = num;
+            }
+            sum += num;
+            numerosList.add(num.toString());
+        }
+        double mitjana = sum / array.length;
+
+        System.out.println("Array: "+"["+String.join(", ", numerosList)+"]");
+        System.out.println("Màxim: "+numMax+"  Mínim: "+numMin+"  Mitjana: "+mitjana);
     }
 
     /**
