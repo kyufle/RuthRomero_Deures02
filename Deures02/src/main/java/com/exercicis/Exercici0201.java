@@ -2,6 +2,8 @@ package com.exercicis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -112,6 +114,14 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostraLlistaEstadistiques
      */
     public static void mostraLlistaEstadistiques(ArrayList<Integer> llista) {
+        Integer sum = 0;
+        for (Integer numsLlista : llista){
+            sum += numsLlista;
+        }
+        double mitjana = sum / llista.size();
+        System.out.println("Llista: "+llista);
+        System.out.println("Màxim: "+Collections.max(llista)+"  Mínim: "+Collections.min(llista)+"  Mitjana: "+mitjana);
+
 
     }
 
