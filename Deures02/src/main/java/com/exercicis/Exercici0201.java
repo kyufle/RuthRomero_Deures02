@@ -59,6 +59,7 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testGeneraArrayEnters
      */
+    //TODO
     public static int[] generaArrayEnters(int mida) {
         int[] rst = new int[0];
         return rst;
@@ -75,6 +76,7 @@ public class Exercici0201 {
      * @param array l'array d'enters sobre el qual calcular les estadístiques
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostraArrayEstadistiques
      */
+    //TODO
     public static void mostraArrayEstadistiques(int[] array) {
     }
 
@@ -88,6 +90,11 @@ public class Exercici0201 {
      */
     public static ArrayList<Integer> generaLlistaEnters(int mida) {
         ArrayList<Integer> rst = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i<mida;i++){
+            int numSencerRandom = random.nextInt(99);
+            rst.add(numSencerRandom);
+        }
         return rst;
     }
 
