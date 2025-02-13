@@ -120,7 +120,22 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraArrayParaulesAmbA
      */
+    //TODO REVISAR
     public static void filtraArrayParaulesAmbA() {
+        System.out.print("Escriu 5 paraules separades per ',' o ', ':");
+        String paraula = scanner.nextLine();
+        String[] paraules = paraula.split(",\\s*");
+        String[] paraulaComencaAmbA = new String[paraules.length];
+        int count = 0;
+        for (int i= 0; i<paraules.length;i++){
+            if (paraules[i].toLowerCase().startsWith("a")){
+                paraulaComencaAmbA[count] = paraules[i];
+                count++;
+            }
+        }
+        String[] resultatFinal = Arrays.copyOf(paraulaComencaAmbA, count);
+        String llistaFinal = String.join(", ",resultatFinal);
+        System.out.println("Paraules que comencen amb 'a': "+llistaFinal);
 
     }
        
@@ -136,10 +151,11 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraLlistaParaulesAmbA
      */
+    //TODO REVISAR
     public static void filtraLlistaParaulesAmbA() {
         ArrayList<String> paraules = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Escriu 5 paraules separades per ',' o ', ': ");
+        System.out.println("Escriu 5 paraules separades per ',' o ', ':");
         String paraula = scanner.nextLine();
         String[] llistaParaula = paraula.split(",\\s*");
         for (String paraulaSeparada : llistaParaula){
@@ -147,7 +163,8 @@ public class Exercici0201 {
                 paraules.add(paraulaSeparada);
             }
         }
-        System.out.println("Paraules que comencen amb 'a': "+paraules);
+        String paraulesAmbComes = String.join(", ",paraules);
+        System.out.println("Paraules que comencen amb 'a': "+paraulesAmbComes);
         
        
     }
