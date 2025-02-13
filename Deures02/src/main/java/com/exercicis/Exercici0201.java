@@ -61,9 +61,13 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testGeneraArrayEnters
      */
-    //TODO
     public static int[] generaArrayEnters(int mida) {
-        int[] rst = new int[0];
+        int[] rst = new int[mida];
+        Random random = new Random();
+        for (int i = 0; i<mida;i++){
+            int numRandom = random.nextInt(100);
+            rst[i] = numRandom;
+        }
         return rst;
     }
 
