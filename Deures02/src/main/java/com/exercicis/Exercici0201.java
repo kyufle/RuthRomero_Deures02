@@ -262,7 +262,16 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testGeneraLlistaDecimals
      */
     public static void filtraArrayDecimalsSuperiors50(double[] decimals) {
-
+        List<Double> numsMayorsDeCincuanta = new ArrayList<>();
+        List<Double> decimalsOriginal = new ArrayList<>();
+        for (int i = 0; i<decimals.length;i++){
+            if(decimals[i] > 50.0){
+                numsMayorsDeCincuanta.add(decimals[i]);
+            }
+            decimalsOriginal.add(decimals[i]);
+        }
+        System.out.println("Array original: ["+String.join(", ",decimalsOriginal.toString())+"]");
+        System.out.println("Valors majors que 50: ["+String.join(", ",numsMayorsDeCincuanta.toString())+"]");
     }   
 
     /**
@@ -330,7 +339,8 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostrarFrecuenciaParaules
      */
     public static void mostrarFrecuenciaParaules() {
-
+        System.out.print("Introdueix una frase:");
+        
     }
 
     /**
