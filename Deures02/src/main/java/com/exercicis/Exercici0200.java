@@ -160,9 +160,16 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testPrintMatrixRectangular
      * @test ./runTest.sh com.exercicis.TestExercici0200#testPrintMatrixEmpty
      */
-    //TODO
     public static void printMatrix(int[][] matrix) {
-
+        for (int[] row : matrix) {
+            for (int i = 0; i < row.length; i++) {
+                System.out.print(row[i]);
+                if (i < row.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println();
+        }
     }
 
     /**
