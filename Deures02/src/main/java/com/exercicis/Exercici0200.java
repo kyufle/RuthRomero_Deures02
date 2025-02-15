@@ -240,7 +240,6 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testInverIntWithZeros
      * @test ./runTest.sh com.exercicis.TestExercici0200#testInverIntSingleDigit
      */
-    //TODO
     public static int inverInt(int num) {
         String numString = String.valueOf(num);
         String numInv = "";
