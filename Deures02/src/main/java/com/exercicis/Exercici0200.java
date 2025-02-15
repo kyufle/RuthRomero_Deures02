@@ -213,17 +213,19 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testFirstNonRepeatedAllRepeated
      * @test ./runTest.sh com.exercicis.TestExercici0200#testFirstNonRepeatedLongString
      */
-    //TODO
     public static char firstNonRepeated(String str) {
-    //     for (int i = 0; i < str.length(); i++) {
-    //         str.substring(i, str.length()).contains(String.valueOf(str.charAt(i)));
-    //     }
-    //     for (char letra : str.toCharArray()) {
-    //         if (str.substring(str.indexOf(String.valueOf(letra))).contains(String.valueOf(letra))) {
+        for (int i = 0; i < str.length(); i++) {
+            
+            String stringPartUn = str.substring(0, i);
+            String stringPartDos = str.substring(i+1, str.length());
+            String juntarDuesParts = stringPartUn+stringPartDos;
 
-    //         }
-    //     }
-        return 's';
+            if (!(juntarDuesParts.contains(String.valueOf(str.charAt(i))))){
+                return str.charAt(i);
+            };
+            
+        }
+        return '_';
     }
             
             
