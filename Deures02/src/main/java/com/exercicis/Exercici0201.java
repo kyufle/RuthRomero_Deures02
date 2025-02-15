@@ -403,7 +403,12 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testOrdenarMapaPerClaus
      */
     public static void ordenarMapaPerClaus() {
-
+        HashMap<String, Integer> mapa = new HashMap<>();
+        mapa.put("Banana", 3);
+        mapa.put("Poma", 5);
+        mapa.put("Taronja", 2);
+        TreeMap<String, Integer> ordenat = new TreeMap<>(mapa);
+        System.out.println("Mapa ordenat per claus: " + ordenat);
     }
 
     /**
