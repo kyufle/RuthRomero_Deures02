@@ -200,10 +200,19 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testTransposeColumnMatrix
      * @test ./runTest.sh com.exercicis.TestExercici0200#testTransposeSingleElement
      */
-    //TODO
     public static int[][] transpose(int[][] matrix) {
-        int[][] rst = new int[0][0];
-        return rst;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int transposedRows = cols;
+        int transposedCols = rows;
+        int[][] transposed = new int[transposedRows][transposedCols];
+
+        for (int cntRow = 0; cntRow < rows; cntRow = cntRow + 1) {
+            for (int cntCol = 0; cntCol < cols; cntCol = cntCol + 1) {
+                transposed[cntCol][cntRow] = matrix[cntRow][cntCol];
+            }
+        }
+        return transposed;
     }
 
     /**
