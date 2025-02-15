@@ -335,10 +335,11 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testMinDistancesMultipleTargets
      * @test ./runTest.sh com.exercicis.TestExercici0200#testMinDistancesNoTargetFound
      */
-    //TODO
     public static ArrayList<Integer> minDistances(String text, char target) {
-        ArrayList<Integer> rst = new ArrayList<>();
-        Integer cnt = 0;
+        ArrayList<Integer> dreta = new ArrayList<>();
+        ArrayList<Integer> esquerra = new ArrayList<>();
+        ArrayList<Integer> junts = new ArrayList<>();
+        Integer cnt = 9000;
         for (int i = 0; i<text.length();i++){
             if (text.charAt(i) == target){
                 cnt = 0;
@@ -346,9 +347,34 @@ public class Exercici0200 {
             else {
                 cnt += 1;
             }
-            rst.add(cnt);
+            dreta.add(cnt);
         }
-        return rst;
+
+        Integer cnt2 = 9000;
+        for (int i = text.length()-1; i>=0;i--){
+            if (text.charAt(i) == target){
+                cnt2 = 0;
+            }
+            else {
+                cnt2 += 1;
+            }
+            esquerra.add(cnt2);
+        }
+        Collections.reverse(esquerra);
+        for (int i = 0; i<text.length();i++){
+            if(esquerra.get(i)>=9000 && dreta.get(i)>=9000){
+                junts.add(text.length());
+            }
+
+            else if(esquerra.get(i)>dreta.get(i)){
+                junts.add(dreta.get(i));
+            }
+            else {
+                junts.add(esquerra.get(i));
+            }
+
+        }
+        return junts;
     }
 
     /**
