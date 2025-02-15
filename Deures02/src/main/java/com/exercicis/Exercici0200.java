@@ -115,9 +115,15 @@ public class Exercici0200 {
      * @test ./runTest.sh com.exercicis.TestExercici0200#testDrawPascalThree
      * @test ./runTest.sh com.exercicis.TestExercici0200#testDrawPascalFive
      */
-    //TODO
     public static void drawPascal(int n) {
-
+        for (int i = 0; i < n; i++) {
+            int num = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num = num * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
     }
 
     /**
