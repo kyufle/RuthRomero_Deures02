@@ -160,7 +160,6 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraArrayParaulesAmbA
      */
-    //TODO REVISAR
     public static void filtraArrayParaulesAmbA() {
         System.out.print("Escriu 5 paraules separades per ',' o ', ':");
         String paraula = scanner.nextLine();
@@ -191,7 +190,6 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraLlistaParaulesAmbA
      */
-    //TODO REVISAR
     public static void filtraLlistaParaulesAmbA() {
         ArrayList<String> paraules = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -235,8 +233,6 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraArrayDecimalsSuperiors50
      */
-
-    //TODO no funciona
     public static ArrayList<Double> generaLlistaDecimals(int mida) {
         ArrayList<Double> rst = new ArrayList<>();
         Random randomRang = new Random();
@@ -287,7 +283,6 @@ public class Exercici0201 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFiltraLlistaDecimalsSuperiors50
      */
-    //TODO REVISAR 0 DEL FINAL
     public static void filtraLlistaDecimalsSuperiors50(ArrayList<Double> decimals) {
         List<Double> nombresDecimalsMesGransQueCincuanta = new ArrayList<>();
         for (double num : decimals){
