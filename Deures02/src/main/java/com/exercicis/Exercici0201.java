@@ -375,6 +375,18 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testFusionarMapesSumantValors
      */
     public static void fusionarMapesSumantValors() {
+        HashMap<String,Integer> mapa1 = new HashMap<>();
+        mapa1.put("X",10);
+        mapa1.put("Y",20);
+        HashMap<String,Integer> mapa2 = new HashMap<>();
+        mapa2.put("Y",5);
+        mapa2.put("Z",15);
+
+        HashMap<String,Integer> fusionat = new HashMap<>(mapa1);
+        for (Map.Entry<String, Integer> e : mapa2.entrySet()) {
+            fusionat.put(e.getKey(), fusionat.getOrDefault(e.getKey(), 0) + e.getValue());
+        }
+        System.out.println("Mapa fusionat: " + fusionat);
 
     }
 
