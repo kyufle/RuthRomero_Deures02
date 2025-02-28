@@ -2,6 +2,7 @@ package com.exercicis;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -306,6 +307,67 @@ public class Exercici0202 {
      */
     // TODO 
     public static void mostrarPlanetesOrdenats(String filePath, String columnaOrdenacio) throws IllegalArgumentException {
+        ArrayList<HashMap<String, Object>> planetes = new ArrayList<>();
+        try {
+            String jsonData = new String(Files.readAllBytes(Paths.get(filePath)));
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONArray jsonArray = jsonObject.getJSONArray("planetes");
+            for (int i = 0;i<jsonArray.length();i++){
+                JSONObject planeta = jsonArray.getJSONObject(i);
+                HashMap<String, Object> infoPlaneta = new HashMap<>();
+                infoPlaneta.put("nom", planeta.getString("nom"));
+                infoPlaneta.put("radi_km",planeta.getJSONObject("dades_fisiques").get("radi_km"));
+                infoPlaneta.put("massa_kg",planeta.getJSONObject("dades_fisiques").get("massa_kg"));
+                infoPlaneta.put("distancia_mitjana_km",planeta.getJSONObject("orbita").get("distancia_mitjana_km"));
+                infoPlaneta.put("periode_orbital_dies",planeta.getJSONObject("orbita").get("periode_orbital_dies"));
+                planetes.add(infoPlaneta);
+            }
+            if (columnaOrdenacio.equalsIgnoreCase("nom")){
+                planetes.sort((planeta0, planeta1) -> {    
+                String a = (String) planeta0.get("nom");
+                String b = (String) planeta1.get("nom");
+                return a.compareTo(b);
+            });
+            }
+
+            else if (columnaOrdenacio.equalsIgnoreCase("radi")){
+                planetes.sort((planeta0, planeta1) -> {    
+                BigDecimal a = (BigDecimal) planeta0.get("radi_km");
+                BigDecimal b = (BigDecimal) planeta1.get("radi_km");
+                return a.compareTo(b);
+            });
+            }
+
+            else if (columnaOrdenacio.equalsIgnoreCase("massa")){
+                planetes.sort((planeta0, planeta1) -> {    
+                BigDecimal a = (BigDecimal) planeta0.get("massa_kg");
+                BigDecimal b = (BigDecimal) planeta1.get("massa_kg");
+                return a.compareTo(b);
+            });
+            }
+
+            else if (columnaOrdenacio.equalsIgnoreCase("distància")){
+                planetes.sort((planeta0, planeta1) -> {    
+                Integer a = (Integer) planeta0.get("distancia_mitjana_km");
+                Integer b = (Integer) planeta1.get("distancia_mitjana_km");
+                return a.compareTo(b);
+            });
+            }
+
+            else {
+                throw new IllegalArgumentException(); 
+            }            
+            System.out.println(String.format("┌──────────────┬────────────┬──────────────┬────────────────┐\n│ %-12s │ %-10s │ %-12s │ %-14s │\n├──────────────┼────────────┼──────────────┼────────────────┤",
+            "Nom", "Radi (km)", "Massa (kg)","Distància (km)"));
+            for (HashMap<String,Object> planeta : planetes){
+                System.out.println(String.format("│ %-12s │ %-10.1f │ %-12.3e │ %-14s │",
+                planeta.get("nom"),planeta.get("radi_km"),planeta.get("massa_kg"), planeta.get("distancia_mitjana_km")));
+            }
+            System.out.println("└──────────────┴────────────┴──────────────┴────────────────┘");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
