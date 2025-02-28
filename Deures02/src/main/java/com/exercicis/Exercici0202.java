@@ -12,6 +12,7 @@ import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+
 public class Exercici0202 {
 
     public static Scanner scanner;
@@ -222,6 +223,36 @@ public class Exercici0202 {
      * @test ./runTest.sh com.exercicis.TestExercici0202#testShowEsportistesOrdenatsPerBronze
      */
     public static void showEsportistesOrdenatsPerMedalla(String filePath, String tipusMedalla) {
+        ArrayList<HashMap<String, Object>> esportistes = new ArrayList<>();
+        try {
+            String jsonData = new String(Files.readAllBytes(Paths.get(filePath)));
+            JSONArray jsonArray = new JSONArray(jsonData);
+            for (int i = 0;i<jsonArray.length();i++){
+                JSONObject esportista = jsonArray.getJSONObject(i);
+                HashMap<String, Object> infoEsportiste = new HashMap<>();
+                infoEsportiste.put("nom", esportista.getString("nom"));
+                infoEsportiste.put("any_naixement", esportista.getInt("any_naixement"));
+                infoEsportiste.put("pais", esportista.getString("pais"));
+                infoEsportiste.put("medalla",esportista.getJSONObject("medalles_olimpiques").getInt(tipusMedalla));
+                esportistes.add(infoEsportiste);
+            }
+            esportistes.sort((esportista0, esportista1) -> {    
+                Integer a = (Integer) esportista0.get("medalla");
+                Integer b = (Integer) esportista1.get("medalla");
+
+                return b.compareTo(a);
+            });
+            System.out.println(String.format("┌──────────────────────┬─────────────────┬────────────┬────────┐\n│ %-20s │ %-15s │ %-10s │ %-6s │\n├──────────────────────┼─────────────────┼────────────┼────────┤",
+            "Nom", "País", "Naixement", tipusMedalla.substring(0, 1).toUpperCase() + tipusMedalla.substring(1)));
+            for (HashMap<String,Object> esportista : esportistes){
+                System.out.println(String.format("│ %-20s │ %-15s │ %-10s │ %-6s │",
+                esportista.get("nom"),esportista.get("pais"),esportista.get("any_naixement"), esportista.get("medalla")));
+            }
+            System.out.println("└──────────────────────┴─────────────────┴────────────┴────────┘");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }   
     }
 
     /**
