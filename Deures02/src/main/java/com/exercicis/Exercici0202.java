@@ -108,8 +108,22 @@ public class Exercici0202 {
      * @test ./runTest.sh com.exercicis.TestExercici0202#testJSONAstronautesToArrayList
      */
     public static ArrayList<HashMap<String, Object>> JSONAstronautesToArrayList(String filePath) {
-        ArrayList<HashMap<String, Object>> rst = new ArrayList<>();
-        return rst;
+        ArrayList<HashMap<String, Object>> astronautes = new ArrayList<>();
+        try {
+            String jsonData = new String(Files.readAllBytes(Paths.get(filePath)));
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONArray astronauta = jsonObject.getJSONArray("astronautes");
+            for (int i = 0;i<astronauta.length();i++){
+                JSONObject cadaAstronauta = astronauta.getJSONObject(i);
+                HashMap<String, Object> infoAstronautes = new HashMap<>();
+                infoAstronautes.put("nom", cadaAstronauta.getString("nom"));
+                infoAstronautes.put("any_naixement", cadaAstronauta.getInt("any_naixement"));
+                astronautes.add(infoAstronautes);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return astronautes;
     }
 
     /**
