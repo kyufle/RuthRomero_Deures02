@@ -4,15 +4,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.Scanner;
 
-import org.json.JSONObject;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class Exercici0202 {
 
@@ -85,6 +83,22 @@ public class Exercici0202 {
      * @test ./runTest.sh com.exercicis.TestExercici0202#testShowJSONAstronautes
      */
     public static void showJSONAstronautes(String filePath) {
+        try {
+            String jsonData = new String(Files.readAllBytes(Paths.get(filePath)));
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONArray astronauta = jsonObject.getJSONArray("astronautes");
+            for (int i = 0;i<astronauta.length();i++){
+                JSONObject cadaAstronauta = astronauta.getJSONObject(i);
+                System.out.println(String.format("> Astronauta %s:\n  Nom: %s\n  Naixement: %s",i,cadaAstronauta.getString("nom"),
+                cadaAstronauta.getInt("any_naixement")));
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+
     } 
 
     /**
