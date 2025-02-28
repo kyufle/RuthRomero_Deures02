@@ -97,9 +97,6 @@ public class Exercici0202 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-        
-
     } 
 
     /**
@@ -272,6 +269,7 @@ public class Exercici0202 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0202#testJSONPlanetesToArrayList
      */
+    // TODO 
     public static ArrayList<HashMap<String, Object>> JSONPlanetesToArrayList(String filePath) {
         ArrayList<HashMap<String, Object>> planetesList = new ArrayList<>();
         return planetesList;
@@ -306,6 +304,7 @@ public class Exercici0202 {
      * @test ./runTest.sh com.exercicis.TestExercici0202#testMostrarPlanetesOrdenatsMassa
      * @test ./runTest.sh com.exercicis.TestExercici0202#testMostrarPlanetesOrdenatsDistancia
      */
+    // TODO 
     public static void mostrarPlanetesOrdenats(String filePath, String columnaOrdenacio) throws IllegalArgumentException {
     }
 
@@ -354,6 +353,7 @@ public class Exercici0202 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0202#testValidarFormatJSON
      */
+    // TODO 
     public static void generarJSON(ArrayList<HashMap<String, Object>> dades, String filePath) throws IOException {
 
         JSONArray jsonArray = new JSONArray(dades);
