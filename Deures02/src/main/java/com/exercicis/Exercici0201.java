@@ -2,7 +2,6 @@ package com.exercicis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -144,8 +143,6 @@ public class Exercici0201 {
         double mitjana = sum / llista.size();
         System.out.println("Llista: "+llista);
         System.out.println("Màxim: "+Collections.max(llista)+"  Mínim: "+Collections.min(llista)+"  Mitjana: "+mitjana);
-
-
     }
 
     /**
@@ -175,7 +172,6 @@ public class Exercici0201 {
         String[] resultatFinal = Arrays.copyOf(paraulaComencaAmbA, count);
         String llistaFinal = String.join(", ",resultatFinal);
         System.out.println("Paraules que comencen amb 'a': "+llistaFinal);
-
     }
        
     /**
@@ -203,8 +199,6 @@ public class Exercici0201 {
         }
         String paraulesAmbComes = String.join(", ",paraules);
         System.out.println("Paraules que comencen amb 'a': "+paraulesAmbComes);
-        
-       
     }
 
     /**
@@ -305,7 +299,7 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostrarLlistaOrdenadesPerEdat
      */
     public static void mostrarLlistaOrdenadesPerEdat(HashMap<String, Integer> persones) {
-
+//TODO
     }
 
     /**
@@ -322,7 +316,7 @@ public class Exercici0201 {
      */
     public static void mostrarFrecuenciaParaules() {
         System.out.print("Introdueix una frase:");
-
+        //TODO
     }
 
     /**
