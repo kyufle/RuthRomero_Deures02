@@ -325,8 +325,20 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostrarFrecuenciaParaules
      */
     public static void mostrarFrecuenciaParaules() {
+        HashMap<String,Integer> frequenciaParaules = new HashMap<>();
         System.out.print("Introdueix una frase:");
-        //TODO
+        String frase = scanner.nextLine();
+        String[] fraseParaules = frase.split(" ");
+        for (String paraules : fraseParaules) {
+            if (!frequenciaParaules.containsKey(paraules)){
+                frequenciaParaules.put(paraules,1);
+            }
+            else {
+                frequenciaParaules.put(paraules, frequenciaParaules.get(paraules)+1);
+            }
+        }
+        System.out.println("Freqüència de paraules: "+frequenciaParaules);
+
     }
 
     /**
