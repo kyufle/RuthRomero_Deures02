@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -299,7 +300,16 @@ public class Exercici0201 {
      * @test ./runTest.sh com.exercicis.TestExercici0201#testMostrarLlistaOrdenadesPerEdat
      */
     public static void mostrarLlistaOrdenadesPerEdat(HashMap<String, Integer> persones) {
-//TODO
+        ArrayList<Entry <String, Integer>> personesOrdenades = new ArrayList<>(persones.entrySet());
+        personesOrdenades.sort((persona0, persona1) -> {
+            Integer a = (Integer) persona0.getValue();
+            Integer b = (Integer) persona1.getValue();
+            return a.compareTo(b);
+        });
+
+        for (Map.Entry<String, Integer> persona  : personesOrdenades) {
+            System.out.print(String.format("%s (%s)\n",persona.getKey(),persona.getValue()));
+        }
     }
 
     /**
