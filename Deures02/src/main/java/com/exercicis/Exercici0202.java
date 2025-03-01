@@ -436,18 +436,15 @@ public class Exercici0202 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0202#testValidarFormatJSON
      */
-    // TODO 
     public static void generarJSON(ArrayList<HashMap<String, Object>> dades, String filePath) throws IOException {
 
         JSONArray jsonArray = new JSONArray(dades);
 
         try (FileWriter file = new FileWriter(filePath)) {
             file.write(jsonArray.toString(4));
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println("Arxiu de mar i oceans creat correctament.");
-
     }
 }
