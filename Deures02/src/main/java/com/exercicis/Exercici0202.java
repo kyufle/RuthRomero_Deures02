@@ -270,9 +270,31 @@ public class Exercici0202 {
      * 
      * @test ./runTest.sh com.exercicis.TestExercici0202#testJSONPlanetesToArrayList
      */
-    // TODO 
     public static ArrayList<HashMap<String, Object>> JSONPlanetesToArrayList(String filePath) {
         ArrayList<HashMap<String, Object>> planetesList = new ArrayList<>();
+        try {
+            String contigut = new String(Files.readAllBytes(Paths.get(filePath)));
+            JSONObject jsonObject = new JSONObject(contigut);
+            JSONArray planetes = jsonObject.getJSONArray("planetes");
+
+            for (int i = 0; i<planetes.length();i++){
+                JSONObject planeteConcret = planetes.getJSONObject(i);
+                HashMap<String, Object> planetHashMap = new HashMap<>();
+                planetHashMap.put("nom",planeteConcret.getString("nom"));
+                HashMap<String, Object> dades_fisiques = new HashMap<>();
+                dades_fisiques.put("radi_km",planeteConcret.getJSONObject("dades_fisiques").getDouble("radi_km"));
+                dades_fisiques.put("massa_kg",planeteConcret.getJSONObject("dades_fisiques").getDouble("massa_kg"));
+                HashMap<String, Object> orbita = new HashMap<>();
+                orbita.put("distancia_mitjana_km",planeteConcret.getJSONObject("orbita").getDouble("distancia_mitjana_km"));
+                dades_fisiques.put("periode_orbital_dies",planeteConcret.getJSONObject("orbita").getDouble("periode_orbital_dies"));
+                planetHashMap.put("dades_fisiques",dades_fisiques);
+                planetHashMap.put("orbita",orbita);
+                planetesList.add(planetHashMap);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return planetesList;
     }
 
