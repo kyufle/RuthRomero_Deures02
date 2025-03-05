@@ -363,7 +363,8 @@ public class Exercici0203 {
      * @test ./runTest.sh com.exercicis.TestExercici0203#testGetCoordsString
      */
     public static String getCoordsString(HashMap<String, Object> monument) {
-        return "";
+        HashMap<String, Object> coordenades = ((HashMap<String, Object>)((HashMap<String, Object>) monument.get("detalls")).get("coordenades"));
+        return String.format(Locale.US,"%.1f,%.1f",coordenades.get("latitud"),coordenades.get("longitud"));
     }
 
     /**
