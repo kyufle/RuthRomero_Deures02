@@ -334,7 +334,18 @@ public class Exercici0203 {
      * @test ./runTest.sh com.exercicis.TestExercici0203#testFormatRow
      */
     public static String formatRow(String[] values, int[] columnWidths) {
-        return "";
+        String columnes = "";
+        for (int i = 0;i<values.length; i++){
+            if (values[i].length() > columnWidths[i]){
+                columnes += String.format("│%-"+columnWidths[i]+"s", values[i].substring(0, columnWidths[i]));
+            }
+            else {
+                columnes += String.format("│%-"+columnWidths[i]+"s", values[i]);
+            }
+            
+        }
+        
+        return columnes + "│";
     }
     
 
